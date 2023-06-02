@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retiro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3fa989935d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="mainGeneral">
+        <div class="generalBox">
+            <div class="autorBox-class" id="autorBox">
+                <img src="" alt="Persona Titular" class="imagenTitular" id="personaTitular">
+                <p class="titular" id="titular-id">Persona titular</p>
+            </div>
+            
+            <div class="operaciones-box">
+                <h2 id="estadoDeCuenta">Estado de cuenta: $0</h2>
+                <label from="input-operaciones-id">¿Cuánto desea retirar?<br><input type="text" inputmode="numeric" placeholder="0" class="input-operaciones" id="input-operaciones-id"/></label>
+                <br>
+                <div class="informacion">
+                    <i class="fa-sharp fa-solid fa-circle-exclamation advertencia" id="iconoAdvertencia" style="margin-right: 5px;"></i><h5>Solo se aceptan billetes de: 20, 100, 200, 500 y 1000</h5>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer><a href="ATM.html"><input type="button" value="Atras" class="botones_para_atras boton_atras_deposito rounded-pill"/></a></footer>
+    <script src="metodos.js"></script>
+</body>
+</html>

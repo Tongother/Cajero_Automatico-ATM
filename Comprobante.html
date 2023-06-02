@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobante</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3fa989935d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="headerComprobante">
+        <h1>Comprobante bancario</h1>
+    </header>
+    <main class="mainComprobante">
+        <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+        <u><h2 id="textoRetiroODeposito">Retiro exitoso</h2></u>
+        <p id="hora">Hora actual</p>
+        <p class="cantidadRetiradaDepositda" id="dineroDepositadoRetirado" style="margin-top: 5px;">Dinero retirado</p>
+        
+        </div>
+
+        <div class="datosComprobante">
+            <div class="iconoTarjetaConImagen">
+                <img src="" alt="Persona titular" id="personaTitular">
+            </div>
+            <div style="display: flex;align-items: center; flex-direction: column; margin-bottom: 40px;">
+                <p id="titular-id">Nombre titular</p>
+                <p id="cuentaVVBA">Cuenta VVBA: </p>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <p class="folio" id="folioComprobante"></p>
+            <p style="margin-top: 5px;">Banco: VVBA</p>
+        </div>
+
+        <div class="btnsComprobante">
+            <a href="" id="RegresarRetiroDeposito"><input type="button" value="Atras" class="botones_para_atras boton_atras_deposito rounded-pill"></a>
+            <input type="button" value="Imprimir" class="botones_para_atras boton_atras_deposito rounded-pill" onclick="imprimirPagina()">
+        </div>
+        <footer><footer><a href="index.html"><input type="button" value="Cerrar sesión" class="botones_para_atras boton_atras_deposito rounded-pill"/></a></footer></footer>
+    </main>
+    <script src="metodos.js"></script>
+</body>
+</html>
