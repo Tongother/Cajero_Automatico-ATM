@@ -134,6 +134,8 @@ main h1{
     position: static;
 }
 
+#myform input[type = "submit"]{ display: none;}
+
 .passwordClass{
     width: 300px;
     height: 50px;

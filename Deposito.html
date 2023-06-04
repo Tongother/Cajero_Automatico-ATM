@@ -21,7 +21,10 @@
             
             <div class="operaciones-box">
                 <h2 id="estadoDeCuenta">Estado de cuenta: $0</h2>
-                <label from="input-operaciones-id">¿Cuánto desea depositar?<br><input type="text" inputmode="numeric" placeholder="0" class="input-operaciones" id="input-operaciones-id"/></label>
+                <form id="myform" action="#">
+                    <label from="input-operaciones-id">¿Cuánto desea depositar?<br><input type="text" inputmode="numeric" placeholder="0" class="input-operaciones" id="input-operaciones-id"/></label>
+                    <input type="submit" value="">
+                </form>
                 <br>
                 <div class="informacion">
                     <i class="fa-sharp fa-solid fa-circle-exclamation advertencia" id="iconoAdvertencia"></i><h5>Solo se aceptan billetes de: 20, 100, 200, 500 y 1000</h5>
