@@ -34,6 +34,14 @@ function obtenerUbicacionRetiroDeposito(){
 
 let imagenAutorCuenta = document.getElementById("personaTitular");
 
+function botonSubmit(){
+    document.getElementById("myform").addEventListener("submit", function(event){
+        event.preventDefault();
+        var password = InputPassword.value;
+        checkPassword(password);
+    });
+}
+
 //Declaración de varialbes para Login
 if(document.title === "Login"){
 
@@ -133,11 +141,14 @@ if(localStorage.getItem("Oscuro") === "true"){
 
 //Aquí empieza el algoritmo para hacer el movimiento entre perfiles
 
-    //Evento que se dispara cuando el forms es enviado
-    document.getElementById("myform").addEventListener("submit", function(event){
-        event.preventDefault();
-        var password = InputPassword.value;
-        checkPassword(password);
+    InputPassword.addEventListener("keydown", function(evento){
+        alert(evento.key);
+            alert(evento.keyCode);
+        if(evento.key == "Enter" || evento.keyCode === 13){
+            
+            var password = InputPassword.value;
+            checkPassword(password);
+        }
     });
 
 angle_left.addEventListener("click", function(){
@@ -421,7 +432,8 @@ if(document.title === "Deposito"){
         }
       });
 
-    function procesoDeposito(){
+    function procesoDeposito(evento){
+        if(evento.key == "Enter" || evento.keyCode === 13){
             if(inputDepositoRetiro.value != "" && inputDepositoRetiro.value== 20 || inputDepositoRetiro.value== 100 || inputDepositoRetiro.value== 200 || inputDepositoRetiro.value== 500 || inputDepositoRetiro.value== 1000){
             const deposito = parseInt(inputDepositoRetiro.value);
             guardarDepositoRetiro(deposito.toString());
@@ -449,29 +461,29 @@ if(document.title === "Deposito"){
         }else{
             alert("Valor no valido, por favor, ingrese una cantidad que este entre las opciones")
         }
+        }
     }
 
     if(obtenerPerfil() == "Cuenta Gunther"){
         agregarFotoGunther();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[0].saldoPersona1}`;
-        document.getElementById("myform").addEventListener("submit", function(event){
-            event.preventDefault();
-            procesoDeposito(event);
+        inputDepositoRetiro.addEventListener("keyup", function(evento){
+           procesoDeposito(evento);
         });
+
+
     }else if(obtenerPerfil() == "Cuenta Alex"){
         agregarFotoAlex();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[1].saldoPersona2}`;
-        document.getElementById("myform").addEventListener("submit", function(event){
-            event.preventDefault();
-            procesoDeposito(event);
-        });
+        inputDepositoRetiro.addEventListener("keyup", function(evento){
+            procesoDeposito(evento);
+         });
     }else if(obtenerPerfil() == "Cuenta Sofia"){
         agregarFotoSofia();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[2].saldoPersona3}`;
-        document.getElementById("myform").addEventListener("submit", function(event){
-            event.preventDefault();
-            procesoDeposito(event);
-        });
+        inputDepositoRetiro.addEventListener("keyup", function(evento){
+            procesoDeposito(evento);
+         });
     }
 
 }else if(document.title === "Retiro"){
@@ -488,7 +500,8 @@ inputDepositoRetiro.addEventListener("keydown", function (event) {
   }
 });
 
-    function procesoRetiro(){
+    function procesoRetiro(evento){
+        if(evento.key == "Enter" || evento.keyCode === 13){
             if((inputDepositoRetiro.value != "" && inputDepositoRetiro.value== 20 || inputDepositoRetiro.value== 100 || inputDepositoRetiro.value== 200 || inputDepositoRetiro.value== 500 || inputDepositoRetiro.value== 1000)){
             const retiro = parseInt(inputDepositoRetiro.value);
             guardarDepositoRetiro(retiro.toString());
@@ -517,30 +530,28 @@ inputDepositoRetiro.addEventListener("keydown", function (event) {
         }else{
             alert("Valor no valido, por favor, ingrese una cantidad que este entre las opciones");
         }
+        }
     }
 
     if(obtenerPerfil() == "Cuenta Gunther"){
         agregarFotoGunther();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[0].saldoPersona1}`;
-        document.getElementById("myform").addEventListener("submit", function(event){
-            event.preventDefault();
-            procesoRetiro();
+        inputDepositoRetiro.addEventListener("keyup", function(evento){
+           procesoRetiro(evento);
         });
 
     }else if(obtenerPerfil() == "Cuenta Alex"){
         agregarFotoAlex();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[1].saldoPersona2}`;
-        document.getElementById("myform").addEventListener("submit", function(event){
-            event.preventDefault();
-            procesoRetiro();
-        });
+        inputDepositoRetiro.addEventListener("keyup", function(evento){
+            procesoRetiro(evento);
+         });
     }else if(obtenerPerfil() == "Cuenta Sofia"){
         agregarFotoSofia();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[2].saldoPersona3}`;
-        document.getElementById("myform").addEventListener("submit", function(event){
-            event.preventDefault();
-            procesoRetiro();
-        });
+        inputDepositoRetiro.addEventListener("keyup", function(evento){
+            procesoRetiro(evento);
+         });
     }
 }else if(document.title === "Consultar saldo"){
     let Estado_de_cuenta = document.getElementById("estadoDeCuenta");
