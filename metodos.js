@@ -142,10 +142,7 @@ if(localStorage.getItem("Oscuro") === "true"){
 //Aquí empieza el algoritmo para hacer el movimiento entre perfiles
 
     InputPassword.addEventListener("keydown", function(evento){
-        alert(evento.key);
-            alert(evento.keyCode);
-        if(evento.key == "Enter" || evento.keyCode === 13){
-            
+        if(evento.key === "Enter" || evento.keyCode === 13){
             var password = InputPassword.value;
             checkPassword(password);
         }
@@ -433,7 +430,7 @@ if(document.title === "Deposito"){
       });
 
     function procesoDeposito(evento){
-        if(evento.key == "Enter" || evento.keyCode === 13){
+        if(evento.key === "Enter" || evento.keyCode === 13){
             if(inputDepositoRetiro.value != "" && inputDepositoRetiro.value== 20 || inputDepositoRetiro.value== 100 || inputDepositoRetiro.value== 200 || inputDepositoRetiro.value== 500 || inputDepositoRetiro.value== 1000){
             const deposito = parseInt(inputDepositoRetiro.value);
             guardarDepositoRetiro(deposito.toString());
@@ -467,7 +464,7 @@ if(document.title === "Deposito"){
     if(obtenerPerfil() == "Cuenta Gunther"){
         agregarFotoGunther();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[0].saldoPersona1}`;
-        inputDepositoRetiro.addEventListener("keyup", function(evento){
+        inputDepositoRetiro.addEventListener("keydown", function(evento){
            procesoDeposito(evento);
         });
 
@@ -475,13 +472,13 @@ if(document.title === "Deposito"){
     }else if(obtenerPerfil() == "Cuenta Alex"){
         agregarFotoAlex();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[1].saldoPersona2}`;
-        inputDepositoRetiro.addEventListener("keyup", function(evento){
+        inputDepositoRetiro.addEventListener("keydown", function(evento){
             procesoDeposito(evento);
          });
     }else if(obtenerPerfil() == "Cuenta Sofia"){
         agregarFotoSofia();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[2].saldoPersona3}`;
-        inputDepositoRetiro.addEventListener("keyup", function(evento){
+        inputDepositoRetiro.addEventListener("keydown", function(evento){
             procesoDeposito(evento);
          });
     }
@@ -501,7 +498,7 @@ inputDepositoRetiro.addEventListener("keydown", function (event) {
 });
 
     function procesoRetiro(evento){
-        if(evento.key == "Enter" || evento.keyCode === 13){
+        if(evento.key === "Enter" || evento.keyCode === 13){
             if((inputDepositoRetiro.value != "" && inputDepositoRetiro.value== 20 || inputDepositoRetiro.value== 100 || inputDepositoRetiro.value== 200 || inputDepositoRetiro.value== 500 || inputDepositoRetiro.value== 1000)){
             const retiro = parseInt(inputDepositoRetiro.value);
             guardarDepositoRetiro(retiro.toString());
@@ -536,20 +533,20 @@ inputDepositoRetiro.addEventListener("keydown", function (event) {
     if(obtenerPerfil() == "Cuenta Gunther"){
         agregarFotoGunther();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[0].saldoPersona1}`;
-        inputDepositoRetiro.addEventListener("keyup", function(evento){
+        inputDepositoRetiro.addEventListener("keydown", function(evento){
            procesoRetiro(evento);
         });
 
     }else if(obtenerPerfil() == "Cuenta Alex"){
         agregarFotoAlex();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[1].saldoPersona2}`;
-        inputDepositoRetiro.addEventListener("keyup", function(evento){
+        inputDepositoRetiro.addEventListener("keydown", function(evento){
             procesoRetiro(evento);
          });
     }else if(obtenerPerfil() == "Cuenta Sofia"){
         agregarFotoSofia();
         Estado_de_cuenta.textContent = `Estado de cuenta: $${cuentas[2].saldoPersona3}`;
-        inputDepositoRetiro.addEventListener("keyup", function(evento){
+        inputDepositoRetiro.addEventListener("keydown", function(evento){
             procesoRetiro(evento);
          });
     }
